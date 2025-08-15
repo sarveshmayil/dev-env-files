@@ -129,3 +129,8 @@ setopt hist_verify
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+alias gl="git log --oneline --graph --all"
+
+alias fzfind="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}' --bind 'enter:become(nvim {})'"
+alias batdiff="git diff --name-only --relative --diff-filter=d -z | xargs -0 bat --diff"
