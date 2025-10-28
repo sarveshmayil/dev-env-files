@@ -23,3 +23,8 @@
 - **tree**: A recursive directory listing command that produces a depth-indented listing of files. Install via brew + raycast.
 - **neovim**: A hyperextensible Vim-based text editor. Install via brew + raycast. [https://neovim.io](https://neovim.io)
 - **uv**: Python package manager. Install via brew + raycast. [https://docs.astral.sh/uv/](https://docs.astral.sh/uv/)
+
+## Zsh Plugins and Themes
+Install oh-my-zsh first: [https://ohmyz.sh/](https://ohmyz.sh/)
+- **powerlevel10k**: A theme for Zsh. Install via brew + raycast.
+- **zsh-syntax-highlighting**: A Zsh plugin that provides syntax highlighting. Install via brew + raycast.
