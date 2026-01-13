@@ -130,8 +130,22 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+alias dim="docker images"
+alias dpsa="docker ps -a --format 'table {{.ID}}\t{{.Image}}\t{{.Command}}\t{{.RunningFor}}\t{{.Status}}\t{{.Names}}'"
+
 alias gl="git log --oneline --graph --all"
 
-export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_DEFAULT_COMMAND="rg --files --hidden -g'!.git'"
 alias fzfind="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}' --bind 'enter:become(nvim {})'"
 alias batdiff="git diff --name-only --relative --diff-filter=d -z | xargs -0 bat --diff"
+
+# Pass regex search as first arg and optionally dir to search in as second arg
+function rgf() {
+    if [ -z "$2" ]
+    then
+        rg --files | rg "$1"
+    else
+        rg --files "$2" | rg "$1"
+    fi
+}
+}
