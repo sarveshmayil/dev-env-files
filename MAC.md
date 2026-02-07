@@ -18,6 +18,7 @@
 - **fzf**: A command-line fuzzy finder. Install via brew + raycast. [https://github.com/junegunn/fzf](https://github.com/junegunn/fzf)
 - **ripgrep**: A line-oriented search tool. Install via brew + raycast. [https://github.com/BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
 - **bat**: A cat clone with syntax highlighting and Git integration. Install via brew + raycast. [https://github.com/sharkdp/bat](https://github.com/sharkdp/bat)
+- **tirith**: Protects from running potentially harmful terminal commands. Install via brew. [https://github.com/sheeki03/tirith](https://github.com/sheeki03/tirith)
 - **htop**: An interactive process viewer. Install via brew + raycast.
 - **mactop**: A macOS system monitor. Install via brew + raycast.
 - **tree**: A recursive directory listing command that produces a depth-indented listing of files. Install via brew + raycast.

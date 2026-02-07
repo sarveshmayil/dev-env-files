@@ -109,9 +109,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export COLORTERM=truecolor
+
 alias la="ls -a"
 alias ll="ls -al"
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -129,12 +130,20 @@ setopt hist_verify
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
+eval "$(tirith init --shell zsh)"
 
 alias dim="docker images"
 alias dpsa="docker ps -a --format 'table {{.ID}}\t{{.Image}}\t{{.Command}}\t{{.RunningFor}}\t{{.Status}}\t{{.Names}}'"
 
 alias gl="git log --oneline --graph --all"
 
+alias bat="batcat"
 export FZF_DEFAULT_COMMAND="rg --files --hidden -g'!.git'"
 alias fzfind="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}' --bind 'enter:become(nvim {})'"
 alias batdiff="git diff --name-only --relative --diff-filter=d -z | xargs -0 bat --diff"
